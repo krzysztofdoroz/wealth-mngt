@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+# An example controller showing how to use dependency injection
+GET     /rate/:currencyCode         controllers.FxRateController.fxRate(currencyCode: String)
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+# controller returning bank details
+GET     /balances                    controllers.BankAccountsController.bankAccountsBalance
+
+GET     /history                    controllers.HistoryController.history
+
+GET     /prediction                  controllers.PredictionController.prediction
+
+GET     /focusedPrediction           controllers.PredictionController.focusedPrediction
+
+GET     /historicalPerformance       controllers.PredictionController.historicalPerformance
+
+GET     /latestAmount                controllers.HistoryController.latestAmount
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
